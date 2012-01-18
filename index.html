@@ -53,15 +53,33 @@
    .link {
     color: #FFC273;
     letter-spacing:0;
-    padding: 2em;
+    padding: 0 2em;
     line-height: 2em;
    }
    .link.info {
-    padding: 2em 0;
+    padding: 0;
    }
    .orange a:hover {
    }
   </style>
+  <script type="text/javascript">
+   // Copied from http://americancensorship.org/modal/call-client.js
+   // (MIT License)
+   function setCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+   }
+   function deleteCookie(name) {
+    setCookie(name,"",-1);
+   }
+   setCookie('americancensorshipcallin', 'beenthere', 1);
+  </script>
+  <script src="http://americancensorship.org/modal/call-client.js"></script>
  </head>
  <body>
   <div>
@@ -100,26 +118,30 @@
    </p>
    <hr />
    <p class="act" id="act">
-    <a href="http://americancensorship.org/modal/call-form-moz.html">
+    <!-- using onclick because I'm lazy -->
+    <a href="http://americancensorship.org/modal/call-form-moz.html"
+       onclick="displayAmericanCensorshipModal(); return false;">
      ACT NOW.
     </a>
    </p>
-   <p>
-    <span>
-     <a class="link" href="http://americancensorship.org/modal/state-dept-petition/index.html">
-      NOT IN THE US?&nbsp; PETITION THE STATE DEPARTMENT.
-     </a>
-    </span>
-   </p>
-   <p style="display: table; margin-top: 0;">
+   <noscript>
+    <p>
+     <span>
+      <a class="link" href="http://americancensorship.org/modal/state-dept-petition/index.html">
+       NOT IN THE US?&nbsp; PETITION THE STATE DEPARTMENT.
+      </a>
+     </span>
+    </p>
+   </noscript>
+   <p style="display: table; margin-top: 0; width: 100%;">
     <span style="display: table-cell;">
-     <a class="link" href="http://americancensorship.org/modal/call-form-moz.html">
+     <a class="link" href="http://americancensorship.org/modal/call-form-moz.html"
+       onclick="displayAmericanCensorshipModal(); return false;">
       CALL YOUR SENATOR AND ASK THEM TO VOTE "NO" FOR PIPA
      </a>
     </span>
     <span style="display: table-cell;">
-     <a class="link" href="https://github.com/SaraJo/SOPA-PIPA-Protest-Page"
-        style="padding: 0;">
+     <a class="link" href="https://github.com/SaraJo/SOPA-PIPA-Protest-Page">
       JOIN US
      </a><br />
      <a class="link" href="https://github.com/scottywz/SOPA-PIPA-Protest-Page"
